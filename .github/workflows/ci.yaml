@@ -23,6 +23,9 @@ jobs:
         with:
           version: latest
 
+      - run: docker info
+      - run: cat /etc/selinux/config
+
       - run: supabase db start
       - run: supabase db lint
       - run: supabase test db
